@@ -20,6 +20,8 @@ def step_impl(context):
 def step_impl(context):
     s1 = Select(context.browser.find_element_by_id('productselect'))
     s1.select_by_index(1)
+    assert s1.first_selected_option.get_attribute('value') == "Rain Coat"
+    # assert s1.first_selected_option.get_attribute('value') == "Umbrella"
     sleep(3)
 
 @when(u'User selects valid payment')
